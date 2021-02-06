@@ -44,4 +44,12 @@ public class ProductService {
         .collect(Collectors.toList());
   }
 
+  public List<Product> getSumOfProductName(String name) {
+    return sumPriceGroupByGroupIdAndName(repository.findByName(name));
+  }
+
+  public List<Product> getSumOfAllProducts() {
+    return sumPriceGroupByGroupIdAndName(repository.findAll());
+  }
+
 }
